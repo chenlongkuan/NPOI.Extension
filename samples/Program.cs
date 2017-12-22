@@ -27,7 +27,7 @@ namespace samples
                 };
             }
 
-            var excelFile = @"/Users/rigofunc/Documents/sample.xlsx";
+            var excelFile = @"D:/sample.xlsx";
 
             // save to excel file
             reports.ToExcel(excelFile);

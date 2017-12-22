@@ -190,8 +190,12 @@ namespace NPOI.Extension
 						}
 						else if (unwrapType == typeof(DateTime))
 						{
-							cell.SetCellValue(Convert.ToDateTime(value));
-						}
+							//cell.SetCellValue(Convert.ToDateTime(value));
+						    var dateTimeValue =
+						       string.IsNullOrEmpty(config.Formatter)? $"{value:yyyy-MM-dd}": Convert.ToDateTime(value.ToString()).ToString(config.Formatter);
+
+                            cell.SetCellValue(dateTimeValue);
+                        }
 						else if (unwrapType == typeof(double))
 						{
 							cell.SetCellValue(Convert.ToDouble(value));
